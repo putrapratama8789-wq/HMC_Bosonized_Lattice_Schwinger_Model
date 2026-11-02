@@ -19,9 +19,9 @@ def solve_point(val_theta, fixed_params):
     FIXED_MASS = fixed_params['FIXED_MASS']
 
     target_Lt = int(math.ceil(val_T / ag))
-    if target_Lt < 2: target_Lt = 1 # Safety floor
+    if target_Lt < 2: target_Lt = 1 
 
-    theta = val_theta #looping over theta (the current variable)
+    theta = val_theta 
 
     
     # Auto-Tune Epsilon
@@ -102,7 +102,7 @@ if __name__ == "__main__":
     
     with multiprocessing.Pool(processes=n_jobs) as pool:
         
-        results = pool.map(worker_func, theta_input) #input the variabel value to the worker function
+        results = pool.map(worker_func, theta_input) 
         all_runs_summary.extend(results)
 
     # FULL MASTER SUMMARY
